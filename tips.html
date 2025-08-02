@@ -1,112 +1,189 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consigli Bodybuilding | Morgan Realbuto</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e01e1e',
+                        secondary: '#b71c1c',
+                        accent: '#f44336',
+                        dark: '#121212',
+                        'dark-gray': '#1e1e1e',
+                        'medium-gray': '#2d2d2d',
+                        'light-gray': '#aaaaaa'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <i class="fas fa-dumbbell" style="margin-right: 8px;"></i> 
-                    Easy <span>Gym</span>
+<body class="text-gray-100 bg-dark leading-relaxed">
+    <header class="bg-dark-gray shadow-2xl sticky top-0 z-50">
+        <div class="w-full max-w-6xl mx-auto px-5">
+            <nav class="flex justify-between items-center py-5">
+                <a href="index.html" class="text-2xl font-bold text-white">
+                    <i class="fas fa-dumbbell mr-2"></i> 
+                    Easy <span class="text-accent">Gym</span>
                 </a>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#services">Servizi</a>
-                    <a href="index.html#schedule">Calendario</a>
-                    <a href="#tips">Consigli</a>
-                    <a href="#contact">Contatti</a>
+                <div class="hidden md:flex gap-8">
+                    <a href="index.html" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#services" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Servizi
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="index.html#schedule" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Calendario
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#tips" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Consigli
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Contatti
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </nav>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 pb-4">
+                <a href="index.html" class="text-light-gray py-2 text-center border-b border-gray-700">Home</a>
+                <a href="index.html#services" class="text-light-gray py-2 text-center border-b border-gray-700">Servizi</a>
+                <a href="index.html#schedule" class="text-light-gray py-2 text-center border-b border-gray-700">Calendario</a>
+                <a href="#tips" class="text-light-gray py-2 text-center border-b border-gray-700">Consigli</a>
+                <a href="#contact" class="text-light-gray py-2 text-center">Contatti</a>
+            </div>
         </div>
     </header>
 
-    <section id="tips" class="container">
-        <div class="section-title advice">
-            <h2>Consigli sul Bodybuilding</h2>
-            <p>Scopri gli errori più comuni che molti principianti (e non solo) commettono e come evitarli per ottenere risultati reali.</p>
+    <section id="tips" class="w-full max-w-6xl mx-auto px-5">
+        <div class="text-center mb-12 mt-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Consigli sul Bodybuilding</h2>
+            <p class="text-light-gray max-w-3xl mx-auto">Scopri gli errori più comuni che molti principianti (e non solo) commettono e come evitarli per ottenere risultati reali.</p>
         </div>
 
-        <div class="tips-list">
-            <div class="tip">
-                <h3><i class="fas fa-dumbbell"></i> Errore #1: Allenarsi senza un piano</h3>
-                <p>Molti iniziano in palestra senza una direzione chiara. Una scheda strutturata e progressiva è fondamentale per ottenere risultati nel tempo.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            <div class="bg-dark-gray p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <h3 class="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                    <i class="fas fa-dumbbell"></i> Errore #1: Allenarsi senza un piano
+                </h3>
+                <p class="text-gray-300 leading-relaxed">Molti iniziano in palestra senza una direzione chiara. Una scheda strutturata e progressiva è fondamentale per ottenere risultati nel tempo.</p>
             </div>
 
-            <div class="tip">
-                <h3><i class="fas fa-utensils"></i> Errore #2: Sottovalutare l'alimentazione</h3>
-                <p>L’allenamento è solo metà dell’equazione. Senza un’alimentazione adeguata ai tuoi obiettivi (massa o definizione), limiterai i tuoi progressi.</p>
+            <div class="bg-dark-gray p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <h3 class="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                    <i class="fas fa-utensils"></i> Errore #2: Sottovalutare l'alimentazione
+                </h3>
+                <p class="text-gray-300 leading-relaxed">L'allenamento è solo metà dell'equazione. Senza un'alimentazione adeguata ai tuoi obiettivi (massa o definizione), limiterai i tuoi progressi.</p>
             </div>
 
-            <div class="tip">
-                <h3><i class="fas fa-bed"></i> Errore #3: Non dormire abbastanza</h3>
-                <p>Il recupero è fondamentale. Dormire almeno 7-8 ore a notte migliora la crescita muscolare, il focus e la performance in palestra.</p>
+            <div class="bg-dark-gray p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <h3 class="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                    <i class="fas fa-bed"></i> Errore #3: Non dormire abbastanza
+                </h3>
+                <p class="text-gray-300 leading-relaxed">Il recupero è fondamentale. Dormire almeno 7-8 ore a notte migliora la crescita muscolare, il focus e la performance in palestra.</p>
             </div>
 
-            <div class="tip">
-                <h3><i class="fas fa-redo"></i> Errore #4: Fare sempre gli stessi esercizi</h3>
-                <p>Il corpo si adatta rapidamente. Alternare esercizi, schede e stimoli evita stalli e favorisce una crescita continua.</p>
+            <div class="bg-dark-gray p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <h3 class="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                    <i class="fas fa-redo"></i> Errore #4: Fare sempre gli stessi esercizi
+                </h3>
+                <p class="text-gray-300 leading-relaxed">Il corpo si adatta rapidamente. Alternare esercizi, schede e stimoli evita stalli e favorisce una crescita continua.</p>
             </div>
 
-            <div class="tip">
-                <h3><i class="fas fa-chart-line"></i> Errore #5: Non monitorare i progressi</h3>
-                <p>Registrare pesi, ripetizioni e misure ti permette di capire se stai migliorando o se devi modificare qualcosa nel tuo approccio.</p>
+            <div class="bg-dark-gray p-6 rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                <h3 class="text-xl font-bold text-accent mb-2 flex items-center gap-2">
+                    <i class="fas fa-chart-line"></i> Errore #5: Non monitorare i progressi
+                </h3>
+                <p class="text-gray-300 leading-relaxed">Registrare pesi, ripetizioni e misure ti permette di capire se stai migliorando o se devi modificare qualcosa nel tuo approccio.</p>
             </div>
         </div>
     </section>
 
-    <section class="cta-section container">
-        <h2>Vuoi una guida personalizzata per evitare questi errori?</h2>
-        <p>Acquista una scheda adatta al tuo livello o prenota una consulenza con me per avere un piano su misura.</p>
-        <a href="index.html#services" class="primary-button">Scopri i Pacchetti</a>
+    <section class="bg-accent text-white text-center py-16 rounded-3xl mx-auto my-16 w-11/12 lg:w-4/5 max-w-5xl">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Vuoi una guida personalizzata per evitare questi errori?</h2>
+        <p class="text-lg mb-6">Acquista una scheda adatta al tuo livello o prenota una consulenza con me per avere un piano su misura.</p>
+        <a href="index.html#services" class="inline-block bg-white text-accent py-3 px-8 rounded-full font-bold transition-all duration-300 hover:bg-gray-200 hover:text-red-800">Scopri i Pacchetti</a>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Easy <span>Gym</span></h3>
-                    <p>Servizi di coaching professionale per aiutarti a raggiungere il tuo pieno potenziale in palestra.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/_morganrealbuto_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@_morganrealbuto_" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <footer id="contact" class="bg-black text-white py-16">
+        <div class="w-full max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Easy <span class="text-accent">Gym</span></h3>
+                    <p class="mb-4 text-light-gray">Servizi di coaching professionale per aiutarti a raggiungere il tuo pieno potenziale in palestra.</p>
+                    <div class="flex gap-4 mt-5">
+                        <a href="https://www.instagram.com/_morganrealbuto_/" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-primary text-light-gray hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@_morganrealbuto_" target="_blank" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-primary text-light-gray hover:text-white">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
                 </div>
 
-                <div class="footer-column">
-                    <h3>Link Utili</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#services">Servizi</a></li>
-                        <li><a href="index.html#schedule">Calendario</a></li>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Link Utili</h3>
+                    <ul class="list-none">
+                        <li class="mb-2">
+                            <a href="index.html" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#services" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Servizi</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="index.html#schedule" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Calendario</a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
-                    <h3>Servizi</h3>
-                    <ul class="footer-links">
-                        <li><a href="#tips">Consigli</a></li>
-                        <li><a href="#">About</a></li>
-
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Servizi</h3>
+                    <ul class="list-none">
+                        <li class="mb-2">
+                            <a href="#tips" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Consigli</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">About</a>
+                        </li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
-                    <h3>Contatti</h3>
-                    <p>Torino</p>
-                    <p><a href="mailto:morganrealbuto@gmail.com">morganrealbuto@gmail.com</a></p>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Contatti</h3>
+                    <p class="mb-4 text-light-gray">Torino</p>
+                    <p class="text-light-gray">
+                        <a href="mailto:morganrealbuto@gmail.com" class="text-accent transition-all duration-300 hover:text-primary hover:translate-x-1 inline-block">morganrealbuto@gmail.com</a>
+                    </p>
                 </div>
             </div>
 
-            <div class="bottom-bar">
-                <p>&copy; 2025 Easy Gym. Tutti i diritti riservati.</p>
+            <div class="mt-10 pt-5 border-t border-gray-800 text-center">
+                <p class="text-light-gray">&copy; 2025 Easy Gym. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
 </body>
 </html>
