@@ -1,89 +1,134 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgan Realbuto | Prenota le Tue Sessioni</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#e01e1e',
+                        secondary: '#b71c1c',
+                        accent: '#f44336',
+                        dark: '#121212',
+                        'dark-gray': '#1e1e1e',
+                        'medium-gray': '#2d2d2d',
+                        'light-gray': '#aaaaaa'
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-dumbbell" style="margin-right: 8px;"></i> 
-                    Easy <span>Gym</span>
+<body class="text-gray-100 bg-dark leading-relaxed">
+    <header class="bg-dark-gray shadow-2xl sticky top-0 z-50">
+        <div class="w-full max-w-6xl mx-auto px-5">
+            <nav class="flex justify-between items-center py-5">
+                <a href="#" class="text-2xl font-bold text-white">
+                    <i class="fas fa-dumbbell mr-2"></i> 
+                    Easy <span class="text-accent">Gym</span>
                 </a>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#services">Servizi</a>
-                    <a href="#schedule">Calendario</a>
-                    <a href="tips.html">Consigli</a>
-                    <a href="#contact">Contatti</a>
+                <div class="hidden md:flex gap-8">
+                    <a href="#" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Home
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#services" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Servizi
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#schedule" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Calendario
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="tips.html" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Consigli
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contact" class="text-light-gray font-medium hover:text-primary transition-colors duration-300 relative group">
+                        Contatti
+                        <span class="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
                 </div>
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </nav>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 pb-4">
+                <a href="#" class="text-light-gray py-2 text-center border-b border-gray-700">Home</a>
+                <a href="#services" class="text-light-gray py-2 text-center border-b border-gray-700">Servizi</a>
+                <a href="#schedule" class="text-light-gray py-2 text-center border-b border-gray-700">Calendario</a>
+                <a href="tips.html" class="text-light-gray py-2 text-center border-b border-gray-700">Consigli</a>
+                <a href="#contact" class="text-light-gray py-2 text-center">Contatti</a>
+            </div>
         </div>
     </header>
     
-    <section class="hero">
-        <div class="container">
-            <h1>La Tua Guida al Bodybuilding</h1>
-            <p>Benvenuto sul mio sito! Sono Morgan, un bodybuilder professionista. Su questo sito potrai acquistare le mie schede di allenamento oppure richiedere una consulenza personalizzata con me. Avrai la possibilità di ricevere una scheda su misura, che potrà essere adattata e aggiornata nel tempo in base ai tuoi progressi.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="primary-button">Vedi i pacchetti</a>
-                <a href="#schedule" class="secondary-button">Vedi il Calendario</a>
+    <section class="bg-gradient-to-br from-dark-gray to-black text-white py-24 text-center mb-16 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-secondary/80 to-black/40 z-10"></div>
+        <div class="w-full max-w-6xl mx-auto px-5 relative z-20">
+            <h1 class="text-4xl md:text-5xl font-bold mb-5">La Tua Guida al Bodybuilding</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Benvenuto sul mio sito! Sono Morgan, un bodybuilder professionista. Su questo sito potrai acquistare le mie schede di allenamento oppure richiedere una consulenza personalizzata con me. Avrai la possibilità di ricevere una scheda su misura, che potrà essere adattata e aggiornata nel tempo in base ai tuoi progressi.</p>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="#services" class="inline-block py-3 px-8 bg-primary text-white rounded font-semibold transition-all duration-300 hover:bg-red-600 hover:-translate-y-1 hover:shadow-lg">Vedi i pacchetti</a>
+                <a href="#schedule" class="inline-block py-3 px-8 bg-transparent text-white border-2 border-primary rounded font-semibold transition-all duration-300 hover:border-red-600 hover:-translate-y-1 hover:shadow-lg">Vedi il Calendario</a>
             </div>
         </div>
     </section>
     
-    <section id="services" class="container">
-        <div class="section-title">
-            <h2>I Miei Servizi di Coaching</h2>
-            <p>Scegli tra una gamma di pacchetti pensati per aiutarti a progredire nel mondo del bodybuilding, che tu sia un neofita o che abbia già qualche esperienza in palestra.</p>
+    <section id="services" class="w-full max-w-6xl mx-auto px-5">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">I Miei Servizi di Coaching</h2>
+            <p class="text-light-gray max-w-3xl mx-auto">Scegli tra una gamma di pacchetti pensati per aiutarti a progredire nel mondo del bodybuilding, che tu sia un neofita o che abbia già qualche esperienza in palestra.</p>
         </div>
         
-        <div class="services">
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('images/image1.webp')"></div>
-                <div class="service-content">
-                    <h3>Scheda Base</h3>
-                    <p>Scheda base pensata per chi inizia con il bodybuilding o desidera un programma semplice ed efficace.
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <div class="bg-medium-gray rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary">
+                <div class="h-48 bg-gray-800 bg-cover bg-center" style="background-image: url('images/image1.webp')"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Scheda Base</h3>
+                    <p class="text-light-gray mb-5">Scheda base pensata per chi inizia con il bodybuilding o desidera un programma semplice ed efficace.
                     Perfetta per costruire una solida base, migliorare la forma fisica e acquisire conoscenza degli esercizi.</p>
-                    <span class="price">24€</span>
-                    <a href="#schedule" class="book-button">Acquista ora</a>
+                    <span class="text-2xl font-bold text-primary mb-5 block">24€</span>
+                    <a href="#schedule" class="inline-block py-2.5 px-5 bg-primary text-white rounded font-medium transition-colors duration-300 hover:bg-secondary">Acquista ora</a>
                 </div>
             </div>
             
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('images/image2.webp')"></div>
-                <div class="service-content">
-                    <h3>Scheda Personalizzata</h3>
-                    <p>Scheda di allenamento personalizzata creata su misura in base ai tuoi obiettivi, livello e caratteristiche fisiche.
+            <div class="bg-medium-gray rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary">
+                <div class="h-48 bg-gray-800 bg-cover bg-center" style="background-image: url('images/image2.webp')"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Scheda Personalizzata</h3>
+                    <p class="text-light-gray mb-5">Scheda di allenamento personalizzata creata su misura in base ai tuoi obiettivi, livello e caratteristiche fisiche.
                     Adatta a ogni esigenza: dimagrimento, massa muscolare o ricomposizione corporea.</p>
-                    <span class="price">35€</span>
-                    <a href="#schedule" class="book-button">Prenota Ora</a>
+                    <span class="text-2xl font-bold text-primary mb-5 block">35€</span>
+                    <a href="#schedule" class="inline-block py-2.5 px-5 bg-primary text-white rounded font-medium transition-colors duration-300 hover:bg-secondary">Prenota Ora</a>
                 </div>
             </div>
             
-            <div class="service-card">
-                <div class="service-img" style="background-image: url('images/image3.webp')"></div>
-                <div class="service-content">
-                    <h3>Scheda + Servizio Personalizzato</h3>
-                    <p>Pacchetto completo di 4 settimane con scheda personalizzata e supporto diretto.
+            <div class="bg-medium-gray rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border-t-4 border-primary">
+                <div class="h-48 bg-gray-800 bg-cover bg-center" style="background-image: url('images/image3.webp')"></div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-white mb-4">Scheda + Servizio Personalizzato</h3>
+                    <p class="text-light-gray mb-5">Pacchetto completo di 4 settimane con scheda personalizzata e supporto diretto.
                     Verrai seguito da me con la possibilità di modificare la scheda nel tempo e contattarmi per consigli o adattamenti.</p>
-                    <span class="price">49€</span>
-                    <a href="#schedule" class="book-button">Prenota Ora</a>
+                    <span class="text-2xl font-bold text-primary mb-5 block">49€</span>
+                    <a href="#schedule" class="inline-block py-2.5 px-5 bg-primary text-white rounded font-medium transition-colors duration-300 hover:bg-secondary">Prenota Ora</a>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="schedule" class="schedule-section container">
-        <div class="section-title">
-            <h2>Prenota la Tua Sessione</h2>
-            <p>Seleziona una data e un orario che fanno al caso tuo e assicurati un meeting con me.</p>
-            <div class="calendar">
+    <section id="schedule" class="w-full max-w-6xl mx-auto px-5 mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Prenota la Tua Sessione</h2>
+            <p class="text-light-gray mb-2">Seleziona una data e un orario che fanno al caso tuo e assicurati un meeting con me.</p>
+            <div class="mt-8">
                 <!-- Calendly inline widget begin -->
                 <div class="calendly-inline-widget" data-url="https://calendly.com/morganrealbuto/30min?background_color=121212&text_color=ffffff&primary_color=f44336" style="min-width:320px;height:700px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
@@ -92,48 +137,70 @@
         </div>
     </section>
     
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Easy <span>Gym</span></h3>
-                    <p>Servizi di coaching professionale per aiutarti a raggiungere il tuo pieno potenziale in palestra.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/_morganrealbuto_/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@_morganrealbuto_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    <footer id="contact" class="bg-black text-white py-16">
+        <div class="w-full max-w-6xl mx-auto px-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Easy <span class="text-accent">Gym</span></h3>
+                    <p class="mb-4 text-light-gray">Servizi di coaching professionale per aiutarti a raggiungere il tuo pieno potenziale in palestra.</p>
+                    <div class="flex gap-4 mt-5">
+                        <a href="https://www.instagram.com/_morganrealbuto_/" target="_blank" aria-label="Instagram" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-primary text-light-gray hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@_morganrealbuto_" target="_blank" aria-label="TikTok" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center transition-colors duration-300 hover:bg-primary text-light-gray hover:text-white">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
                     </div>
-
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Link Utili</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#services">Servizi</a></li>
-                        <li><a href="#schedule">Calendario</a></li>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Link Utili</h3>
+                    <ul class="list-none">
+                        <li class="mb-2">
+                            <a href="#" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Home</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#services" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Servizi</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#schedule" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Calendario</a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Servizi</h3>
-                    <ul class="footer-links">
-                        <li><a href="tips.html">Consigli</a></li>
-                        <li><a href="#">About</a></li>
-
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Servizi</h3>
+                    <ul class="list-none">
+                        <li class="mb-2">
+                            <a href="tips.html" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">Consigli</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-light-gray transition-all duration-300 hover:text-primary hover:pl-2">About</a>
+                        </li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Contatti</h3>
-                    <p>Torino</p>
-                    <p> <a href="mailto:morganrealbuto@gmail.com">morganrealbuto@gmail.com</a></p>
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-5">Contatti</h3>
+                    <p class="mb-4 text-light-gray">Torino</p>
+                    <p class="text-light-gray">
+                        <a href="mailto:morganrealbuto@gmail.com" class="text-accent transition-all duration-300 hover:text-primary hover:translate-x-1 inline-block">morganrealbuto@gmail.com</a>
+                    </p>
                 </div>
             </div>
             
-            <div class="bottom-bar">
-                <p>&copy; 2025 Easy Gym. Tutti i diritti riservati.</p>
+            <div class="mt-10 pt-5 border-t border-gray-800 text-center">
+                <p class="text-light-gray">&copy; 2025 Easy Gym. Tutti i diritti riservati.</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+    </script>
 </body>
 </html>
