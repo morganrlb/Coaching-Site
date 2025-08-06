@@ -357,6 +357,54 @@ footer {
     color: var(--light-gray);
 }
 
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--medium-gray);
+    color: var(--light-color);
+    margin-bottom: 10px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--light-gray);
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: var(--secondary-color);
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .container {
@@ -420,19 +468,6 @@ footer {
         margin-bottom: 20px;
     }
     
-    .tip {
-        padding: 20px;
-    }
-    
-    .cta-section {
-        padding: 40px 15px;
-        margin: 40px auto 30px auto;
-    }
-    
-    .cta-section h2 {
-        font-size: 24px;
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -441,10 +476,6 @@ footer {
     
     .social-links {
         justify-content: center;
-    }
-    
-    .available-slots {
-        font-size: 14px;
     }
 }
 

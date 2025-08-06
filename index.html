@@ -77,17 +77,28 @@
                 </div>
             </div>
         </div>
+        <p class="post-payment-info" style="text-align: center; color: var(--light-gray); margin-bottom: 30px; font-style: italic;">
+            Dopo il pagamento verrai indirizzato a un modulo per raccogliere i dati necessari alla creazione della tua scheda personalizzata. Le informazioni saranno trattate in modo riservato.
+        </p>
     </section>
     
     <section id="schedule" class="schedule-section container">
         <div class="section-title">
-            <h2>Prenota la Tua Sessione</h2>
-            <p>Seleziona una data e un orario che fanno al caso tuo e assicurati un meeting con me.</p>
-            <div class="calendar">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/morganrealbuto/30min?background_color=121212&text_color=ffffff&primary_color=f44336" style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                <!-- Calendly inline widget end -->
+            <h2>Contattami</h2>
+            <p>Compila il form sottostante per ricevere maggiori informazioni o chiarimenti sui servizi offerti.</p>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mgvzngjl" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="Nome e cognome" placeholder="Nome e cognome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="Email" placeholder="user@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="Messaggio" placeholder="Il tuo messaggio" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Invia Messaggio</button>
+                </form>
             </div>
         </div>
     </section>
