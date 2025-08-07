@@ -410,70 +410,70 @@ footer {
     .container {
         padding: 0 15px;
     }
-    
+
     header {
         position: relative;
     }
-    
+
     .navbar {
         flex-direction: column;
         gap: 15px;
         padding: 10px 0;
     }
-    
+
     .nav-links {
         flex-direction: column;
         align-items: center;
         gap: 12px;
         width: 100%;
     }
-    
+
     .nav-links a {
         width: 100%;
         text-align: center;
         padding: 8px 0;
     }
-    
+
     .hero {
         padding: 40px 0;
     }
-    
+
     .hero h1 {
         font-size: 32px;
     }
-    
+
     .hero p {
         font-size: 16px;
         padding: 0 15px;
     }
-    
+
     .hero-buttons {
         flex-direction: column;
         gap: 12px;
         align-items: stretch;
         padding: 0 20px;
     }
-    
+
     .section-title h2 {
         font-size: 28px;
     }
-    
+
     .services {
         grid-template-columns: 1fr;
         gap: 20px;
         padding: 0 10px;
     }
-    
+
     .service-card {
         margin-bottom: 20px;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
         text-align: center;
     }
-    
+
     .social-links {
         justify-content: center;
     }
@@ -555,6 +555,30 @@ footer {
 .cta-section .primary-button:hover {
     background-color: #e0e0e0;
     color: #d32f2f;
+}
+
+/* Personalized Program Page Styles */
+.cta-section ul {
+    text-align: left;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.cta-section ul li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.cta-section .price {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .cta-section ul {
+        padding: 0 20px;
+    }
 }
 
 /* Responsive Grid */
