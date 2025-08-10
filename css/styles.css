@@ -134,7 +134,7 @@ header {
     border-radius: var(--border-radius-small);
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.3s;
 }
 
 .hero-buttons a:hover {
@@ -145,6 +145,7 @@ header {
 .primary-button {
     background-color: var(--primary-color);
     color: var(--dark-color);
+    transition: all 0.3s;
 }
 
 .primary-button:hover {
