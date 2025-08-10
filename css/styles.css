@@ -193,13 +193,13 @@ header {
     border-radius: var(--border-radius-large);
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid var(--medium-gray);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .service-img {
@@ -241,12 +241,13 @@ header {
     border-radius: var(--border-radius-small);
     font-weight: 500;
     text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .book-button:hover {
     background-color: var(--primary-color);
     color: var(--dark-color);
+    transform: scale(1.05);
 }
 
 /* Schedule Section */
@@ -345,7 +346,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s;
+    transition: 0.3s;
     color: var(--light-gray);
     text-decoration: none;
     border: 1px solid var(--medium-gray);
@@ -354,6 +355,7 @@ footer {
 .social-links a:hover {
     background-color: var(--primary-color);
     color: var(--dark-color);
+    transform: scale(1.1);
 }
 
 .bottom-bar {
@@ -384,6 +386,14 @@ footer {
     background-color: var(--medium-gray);
     color: var(--light-color);
     margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color);
+    background-color: #383838;
 }
 
 .form-group input::placeholder,
@@ -511,11 +521,6 @@ footer {
     border: 1px solid var(--medium-gray);
 }
 
-.tip:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-}
-
 .tip h3 {
     font-size: 20px;
     margin-bottom: 10px;
@@ -559,13 +564,17 @@ footer {
     border-radius: var(--border-radius-small);
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block; /* Aggiunto per permettere il transform */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* transizione anche per lo scale */
+    transform: scale(1); /* Stato iniziale */
 }
 
 .cta-section .primary-button:hover {
     background-color: var(--accent-color);
     color: var(--light-color);
+    transform: scale(1.05); /* Effetto scale visibile */
 }
+
 
 /* Personalized Program Page Styles */
 .cta-section ul {
